@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        #if DEBUG
+        print("ViewController::viewDidLoad DEBUG")
+        #endif
         let manager = SecretsManager(key: "12345")
         if let secret = manager.readSecret() {
             print("The sccret is \(secret)")

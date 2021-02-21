@@ -12,6 +12,9 @@ public class SecretsManager {
     private var isAuthorized: Bool
     
     public init(key: String) {
+        #if DEBUG
+        print("SecretsManager::init")
+        #endif
         isAuthorized = Approved.keys.contains(key) ? true : false
     }
     
